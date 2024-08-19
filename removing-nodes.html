@@ -20,7 +20,10 @@
     <button type="button" onclick="removeListFirstChild()">Remove list first child with removeChild()</button>
     <button type="button" onclick="removeAllListChildren()">Remove all list children with removeChild()</button>
     <button type="button" onclick="removeList()">Remove entire list with remove()</button>
-    <p>Reload the page to reset the DOM and bring the list back.</p> 
+    <!-- <p>Reload the page to reset the DOM and bring the list back.</p> -->
+     <br>
+     <br>
+     <button type="button" onclick="resetPage()">Click me to Start Over</button>
 
     <script>
         const listNode = document.querySelector('#myList');
@@ -37,6 +40,10 @@
         
         function removeList() {
             listNode.remove();
+        }
+
+        function resetPage() {
+            location.reload();
         }
     </script>
 </body>
