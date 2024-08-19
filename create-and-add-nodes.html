@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Create and Add Nodes Demo</title>
+    <style>
+        p {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- <h1 id="header">Change Me</h1> -->
+
+    <p id="firstP" onclick="insertNewElement()">Click this text to insert a new hr element to the page</p>
+
+    <p id="secondP" onclick="insertNewText()">Click this text to append a new text child node to the page</p>
+
+    <p id="thirdP" onclick="insertNewHeader()">Click on this text to add a header</p>
+
+    <script>
+        function insertNewElement() {
+            const newEl = document.createElement('hr');
+            const parentNode = document.querySelector('#firstP');
+            parentNode.insertBefore(newEl, parentNode.firstChild);
+        }
+
+        function insertNewText() {
+            const newText = document.createTextNode(' This is dynamically added text!');
+            const parentNode = document.getElementById('secondP');
+            parentNode.appendChild(newText);
+        }
+
+        function insertNewHeader() {
+            const newHeader = document.createElement("h1");
+            const newText = document.createTextNode("I am a header!");
+            document.body.insertBefore(newHeader, document.body.firstChild);
+            newHeader.appendChild(newText);
+        }
+    </script>
+</body>
+</html>
